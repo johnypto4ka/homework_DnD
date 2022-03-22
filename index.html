@@ -5,13 +5,26 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Cards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-
+    <h2 class="cards__title">Кликните дважды для редактирования</h2>
+    <div class="container">
+      <form class="card__form" id="cardFormCreate">
+        <div class="card__color">
+          <div class="color__text">Выберите цвет:</div>
+        <input type="color" id="color" required>
+        </div>
+         <button class="btn__create"> Создать </button>
+       </form>
+      <div class="wrapper"></div>
+    </div>
   <script src="./dist/bundle.js"></script>
 </body>
 
 </html>
+
