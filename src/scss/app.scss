@@ -6,7 +6,7 @@
 body {
   min-height: 920px;
   overflow: hidden;
-  background: url(../img/WallpaperDog-11018341.jpg) center center/cover no-repeat;
+  background: url(../img/WallpaperDog-11018341.jpg) center no-repeat;
   font-family: 'Mulish', sans-serif;
   color: white;
 }
@@ -45,7 +45,7 @@ body {
   width: 300px;
   height: 400px;
   border-radius: 10px;
-  padding: 10px;
+  padding: 30px 10px;
   box-shadow: 0px 0px 8px 4px rgba(34, 60, 80, 0.2);
   display: flex;
   flex-direction: column;
@@ -65,8 +65,9 @@ body {
   cursor: pointer;
 }
 .btn__remove {
-  position: relative;
-  left: 250px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
   width: 30px;
   height: 30px;
   border: 1px rgba(0, 0, 0, 0.315) solid;
@@ -85,15 +86,15 @@ body {
   border-radius: 8px;
   box-shadow: 0px 0px 8px 3px rgb(51, 48, 207);
 }
-.card.edit .card__title {
+.card_edit .card__title {
   display: none;
 }
 .card .card__textarea,
 .card .card__save {
   display: none;
 }
-.card.edit .card__textarea,
-.card.edit .card__save {
+.card_edit .card__textarea,
+.card_edit .card__save {
   display: block;
   padding: 8px 10px;
 }

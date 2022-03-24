@@ -16,28 +16,30 @@ class DnD {
 
   init() {
     this.handleMouseMove = this.handleMouseMove.bind(this)
-
     this.element.addEventListener('mousedown', this.handleMouseDown.bind(this))
     this.element.addEventListener('mouseup', this.handleMouseUp.bind(this))
   }
 
   handleMouseDown({ clientX, clientY }) {
     document.addEventListener('mousemove', this.handleMouseMove)
-
     this.calcShifts(clientX, clientY)
-  }
-
-  handleMouseMove({ clientX, clientY }) {
-    this.setPosition(clientX, clientY)
-
-    const customEvent = new CustomEvent('drag.end', {
-      detail: { data: this.position },
+    const customEvent = new CustomEvent('dnd.start', {
+      detail: { element: this.position }
     });
     window.dispatchEvent(customEvent)
   }
 
-  handleMouseUp({ clientX, clientY }) {
+  handleMouseMove({ clientX, clientY }) {
+    console.log('mousemove')
+    this.setPosition(clientX, clientY)
+  }
+
+  handleMouseUp() {
     document.removeEventListener('mousemove', this.handleMouseMove)
+    const customEvent = new CustomEvent('dnd.end', {
+      detail: { position: this.position }
+    });
+    window.dispatchEvent(customEvent)
   }
 
   calcShifts(x, y) {
